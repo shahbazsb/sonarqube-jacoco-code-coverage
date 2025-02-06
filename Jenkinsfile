@@ -15,8 +15,7 @@ pipeline {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
 	sh 'gradle --version'		
-        #sh "./gradlew sonar -Dsonar.login='${SONAR_LOGIN_TOKEN}' --info"
-	
+        
         }
       }
     }
