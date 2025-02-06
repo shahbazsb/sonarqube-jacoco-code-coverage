@@ -13,7 +13,7 @@ pipeline {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
-          sh ".gradlew sonarqube -Dsonar.login='${SONAR_LOGIN_TOKEN}'"
+          sh "./gradlew sonarqube -Dsonar.login='${SONAR_LOGIN_TOKEN}'"
         }
       }
     }
