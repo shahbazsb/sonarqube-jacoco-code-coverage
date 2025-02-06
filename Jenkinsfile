@@ -3,12 +3,18 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
+   environment {
+        
+        SONAR_LOGIN_TOKEN = "squ_ce89947911c77ea8f0045cbe038e191b8ce355e0"
+        
+    }
   stages {
 	
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'sq1') { 
-          sh'./gradlew sonar'
+          sh "$gradle --info sonarqube \
+                                  -Dsonar.login='${SONAR_LOGIN_TOKEN}'
         }
       }
     }
