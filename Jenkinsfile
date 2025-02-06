@@ -7,7 +7,7 @@ pipeline {
         SONAR_LOGIN_TOKEN = "squ_ce89947911c77ea8f0045cbe038e191b8ce355e0"
     }
    tools{
-    gradle '6.9.4'
+    gradle '7.6'
    }
   stages {
 	
